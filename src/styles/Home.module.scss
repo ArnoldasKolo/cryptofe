@@ -1,0 +1,17 @@
+.heroWrapper{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+   .heroTextWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+   } 
+   .imgWrapper{
+    .img{
+        height: 500px;
+        width: 500px;
+    }
+   }
+}

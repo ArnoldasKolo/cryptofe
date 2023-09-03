@@ -1,0 +1,101 @@
+$mainPageColor: #c3ffa6;
+$secondaryColor: #63fb90;
+$thirdColor: #e7ff7f;
+
+.burgerButton {
+  background-color: transparent;
+  border: none;
+  .burgerIcon:hover{
+    color: $secondaryColor;
+  }
+  .burgerIcon {
+    font-size: 30px;
+    color: $mainPageColor;
+    cursor: pointer;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition properties */
+  }
+}
+
+.logoImg {
+  font-size: 60px;
+}
+.logo {
+  font-size: 25px;
+  text-decoration: none;
+  color: #c3ffa6;
+}
+
+.openWrapper {
+  display: flex;
+  justify-content: right;
+  .menuOpen {
+    width: 20%;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    transition: width 0.5s ease-in-out;
+    overflow: hidden;
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow to left side */
+    border-left-style: solid;
+    border-color:$secondaryColor;
+    .itemList {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+      .itemLink:hover{
+        color: $secondaryColor;
+        transition: 0.2s;
+      }
+      .itemLink {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: $mainPageColor;
+        transition: 0.2s;
+        .itemIcon {
+
+          font-size: 26px;
+        }
+        .itemText {
+
+          font-size: 16px;
+          font-weight: 700;
+          margin: 0px;
+        }
+
+      }
+    }
+  }
+  .menuClosed {
+    width: 0%;
+    display: flex; /* Change this to 'flex' to ensure transitions work */
+    transition: width 0.5s ease-in-out; /* Add transition to width */
+    overflow: hidden; /* Hide the content when closed */
+    .itemList {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+      .itemLink {
+        text-decoration: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        .itemIcon {
+          color: #609966;
+          font-size: 26px;
+        }
+        .itemText {
+          color: black;
+          color: #6f6f6f;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
