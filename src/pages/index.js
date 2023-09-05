@@ -11,18 +11,18 @@ const index = () => {
       <Header />
       <div className={styles.heroWrapper}>
         <div className={styles.heroTextWrapper}>
-          <h1 class="fs-1 text-light">Fastest Way to Follow Crypto market</h1>
-          <p class="fs-4 text-light">Discover crypto statistics in one place</p>
+          <h1 className="fs-1 text-light">Fastest Way to Follow Crypto market</h1>
+          <p className="fs-4 text-light">Discover crypto statistics in one place</p>
           <div className={styles.buttonWrapper}>
             <Link href="/Register">
               {" "}
-              <button type="button" class="btn btn-primary w-25 ">
+              <button type="button" class="btn btn-primary w-25  btn-sm">
                 Register
               </button>
             </Link>
             <Link href="/Login">
               {" "}
-              <button type="button" class="btn btn-primary w-25 ">
+              <button type="button" class="btn btn-primary w-25 btn-sm ">
                 Login
               </button>
             </Link>

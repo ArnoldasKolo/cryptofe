@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "@/Components/Header/Header";
 import axios from "axios";
+import Cookies from 'js-cookie';
 
 const index = () => {
   const router = useRouter();
@@ -14,16 +15,17 @@ const index = () => {
   const [inputFail, setInputFail] = useState(false);
   const [badData, setBadData] = useState("");
 
-  const createUser = async () => {
+  const logUser = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8081/logIn",
+        "https://cryptobe.adaptable.app/logIn",
         {
           email: email,
           password: password,
         }
       );
       console.log("response", response);
+      Cookies.set('UserToken', response.data.token)
 
       if (response.status === 200) {
         router.push("/Main");
@@ -60,7 +62,7 @@ const index = () => {
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
-              <button onClick={createUser} className={styles.button}>Submit</button>
+              <button onClick={logUser} className={styles.button}>Submit</button>
               <span className="text-white ">Dont have an account?</span>
               <Link href="/Register">Register</Link>
               {inputFail ? <p className={styles.inputFail}>{badData}</p> : ""}

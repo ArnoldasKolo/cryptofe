@@ -75,3 +75,62 @@ $thirdColor: #e7ff7f;
     }
   }
 }
+
+@media (max-width: 1250px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .container {
+    max-width: 800px;
+    .section1 {
+      width: 70%;
+
+
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    max-width: 700px;
+    .section1 {
+      width: 80%;
+      margin-top: 100px;
+
+    }
+  }
+  
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    max-width: 480px;
+    .section1 {
+      width: 80%;
+      padding: 30px;
+    }
+    .registerHeader {
+      font-size: 35px;
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  
+  
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 400px;
+  }
+}

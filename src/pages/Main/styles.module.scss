@@ -1,13 +1,142 @@
-.cryptoWrapper{
+$mainPageColor: #c3ffa6;
+$secondaryColor: #63fb90;
+$thirdColor: #e7ff7f;
+
+
+.cryptoWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 30px;
+}
+
+.crypto-item {
+  margin-top: 30px;
+}
+
+.chartCanvas{
+  height: 200px;
+  width: 400px;
+}
+
+.followButton {
+  background-color: #63fb90;
+}
+
+.searchWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.searchInput {
+  width: 30%;
+  font-size: 20px;
+  box-sizing: border-box;
+  background-color: $thirdColor;
+  border: none;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 30px;
+  color: black;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $secondaryColor;
+    transition: 0.5s;
+  }
+
+  &.redInput {
+    border: 2px solid red;
+    /* Add any other styles to make it appear red */
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.range {
+  background-color: $mainPageColor;
+}
+
+.priceText {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.customRange {
+  width: 30%;
+  height: 20px;
+  background-color: #63fb90;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #63fb90;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #63fb90;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #63fb90;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  .cryptoWrapper {
     display: flex;
     flex-wrap: wrap;
-    max-width: 800px;
+    flex-direction: column;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     gap: 30px;
-   
+    align-items: center;
+  }
+  .chartCanvas{
+    height: 200px;
+    width: 100%;
+  }
 }
 
-.crypto-item{
-    margin-top: 30px;
+
+@media (max-width: 700px) {
+  .customRange{
+    width: 80%;
   }
+
+  .searchInput{
+    width: 80%;
+  }
+  
+}

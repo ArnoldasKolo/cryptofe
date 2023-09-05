@@ -7,21 +7,24 @@ import styles from "./Styles.module.scss";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiBitcoin } from "react-icons/bi";
-
+import Cookies from 'js-cookie';
 const MENU_LIST = [
   {
     icon: BiBitcoin, // Use the icon component directly
-    text: "Follows",
+    text: "Log out",
     href: "/",
   },
 ];
 
 const MobNav = (props) => {
+  const handleLogout = () => {
+    Cookies.remove('UserToken'); 
+  };
   return (
     <div className={`${props.active ? styles.menuOpen : styles.menuClosed}`}>
       <ul className={styles.itemList}>
         {MENU_LIST.map((item) => (
-          <li className={styles.item} key={item.text}>
+          <li onClick={handleLogout}  className={styles.item} key={item.text}>
             <Link className={styles.itemLink} href={item.href}>
               {<item.icon className={styles.itemIcon} />}{" "}
               {/* Render the icon */}
@@ -34,6 +37,9 @@ const MobNav = (props) => {
   );
 };
 
+
+
+
 const Header = () => {
   const [active, setActive] = useState(false);
   return (
@@ -43,7 +49,7 @@ const Header = () => {
           <div>
             <div class="navbar bg-$teal-200">
               <div class="container-fluid">
-                <Link className={styles.logo} href="/">
+                <Link className={styles.logo} href="/Main">
                   <CiBitcoin className={styles.logoImg} />
                   CryptoView
                 </Link>

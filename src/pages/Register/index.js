@@ -18,8 +18,9 @@ const index = () => {
   const createUser = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8081/signUp",
+        "https://cryptobe.adaptable.app/signUp",
         {
+          username:username,
           email: email,
           password: password,
         }
@@ -27,10 +28,10 @@ const index = () => {
       console.log("response", response);
 
       if (response.status === 200) {
-        router.push("/login");
+        router.push("/Login");
       }
     } catch (err) {
-
+      console.log(err)
       setBadData(err.response.data.response);
       console.log(badData);
       if (err) {
